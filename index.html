@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Finder Map Module</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="location-finder" aria-labelledby="location-finder-title">
+        <div class="location-finder__header">
+          <h1 id="location-finder-title">Find a branch or depot</h1>
+          <p class="location-finder__subtext">
+            Search for the nearest location and view contact details.
+          </p>
+        </div>
+
+        <div class="location-finder__controls" role="search">
+          <div class="control-group">
+            <label class="control-label" for="search-input">Search</label>
+            <div class="search-input">
+              <span class="search-input__icon" aria-hidden="true">🔍</span>
+              <input
+                id="search-input"
+                type="search"
+                placeholder="Enter postcode, town, or location name"
+                autocomplete="postal-code"
+              />
+              <button id="search-button" type="button" class="btn btn-primary">
+                Search
+              </button>
+            </div>
+            <p class="control-help" id="search-help">
+              Try a postcode, city, or branch name.
+            </p>
+          </div>
+
+          <div class="control-group">
+            <label class="control-label" for="filter-select">Filter</label>
+            <select id="filter-select">
+              <option value="all">All locations</option>
+              <option value="head-office">Head office</option>
+              <option value="depot">Depot</option>
+              <option value="service">Service centre</option>
+              <option value="branch">Branch</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="location-finder__content">
+          <div id="map" class="map" role="application" aria-label="Location map"></div>
+          <aside class="location-finder__panel" aria-live="polite">
+            <div class="panel-card">
+              <h2 class="panel-card__title">Selected location</h2>
+              <p class="panel-card__body" id="panel-empty">
+                Click a pin to see location details.
+              </p>
+              <div id="panel-details" class="panel-details" hidden></div>
+            </div>
+            <div class="panel-card">
+              <h3 class="panel-card__title">Results</h3>
+              <p class="panel-card__body" id="results-summary">Showing all locations.</p>
+              <ul id="results-list" class="results-list" aria-label="Location results"></ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
+    <script src="script.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDz1cjO12qRIaFuQLKBElQf8b3lhbp6Kpg&callback=initMap"
+    ></script>
+  </body>
+</html>
