@@ -1,4 +1,4 @@
-/* global google, markerClusterer */
+/* global L */
 
 const LOCATION_DATA = [
   {
@@ -109,41 +109,7 @@ const TYPE_LABELS = {
   service: "Service centre",
 };
 
-const MAP_STYLES = [
-  {
-    featureType: "water",
-    elementType: "geometry",
-    stylers: [{ color: "#d7e3f3" }],
-  },
-  {
-    featureType: "landscape",
-    elementType: "geometry",
-    stylers: [{ color: "#f1f5f9" }],
-  },
-  {
-    featureType: "poi",
-    elementType: "labels.text.fill",
-    stylers: [{ color: "#64748b" }],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry",
-    stylers: [{ color: "#ffffff" }],
-  },
-  {
-    featureType: "road",
-    elementType: "labels.text.fill",
-    stylers: [{ color: "#475569" }],
-  },
-  {
-    featureType: "administrative",
-    elementType: "labels.text.fill",
-    stylers: [{ color: "#334155" }],
-  },
-];
-
 let map;
-let infoWindow;
 let markers = [];
 let clusterer;
 
@@ -153,24 +119,32 @@ function initMap() {
     return;
   }
 
-  map = new google.maps.Map(mapElement, {
-    center: { lat: 54.5, lng: -2.5 },
-    zoom: 5,
-    mapTypeControl: false,
-    fullscreenControl: false,
-    styles: MAP_STYLES,
+  map = L.map(mapElement, {
+    zoomControl: true,
+    scrollWheelZoom: true,
+  }).setView([54.5, -2.5], 5);
+
+  L.tileLayer(
+    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    {
+      attribution:
+        "Map data (c) OpenStreetMap contributors, tiles by CARTO",
+      maxZoom: 19,
+    }
+  ).addTo(map);
+
+  clusterer = L.markerClusterGroup({
+    showCoverageOnHover: false,
+    maxClusterRadius: 48,
   });
 
-  infoWindow = new google.maps.InfoWindow();
-
   markers = LOCATION_DATA.map((location) => {
-    const marker = new google.maps.Marker({
-      position: { lat: location.lat, lng: location.lng },
+    const marker = L.marker([location.lat, location.lng], {
       title: location.name,
       icon: getMarkerIcon(location.type),
     });
 
-    marker.addListener("click", () => {
+    marker.on("click", () => {
       openInfoWindow(location, marker);
       updatePanel(location);
     });
@@ -178,10 +152,8 @@ function initMap() {
     return { marker, location };
   });
 
-  clusterer = new markerClusterer.MarkerClusterer({
-    map,
-    markers: markers.map((item) => item.marker),
-  });
+  clusterer.addLayers(markers.map((item) => item.marker));
+  map.addLayer(clusterer);
 
   wireControls();
   syncResults();
@@ -248,23 +220,20 @@ function updateMarkers(filteredLocations) {
 
   markers.forEach(({ marker, location }) => {
     if (filteredIds.has(location.id)) {
-      marker.setMap(map);
       visibleMarkers.push(marker);
-    } else {
-      marker.setMap(null);
     }
   });
 
-  clusterer.clearMarkers();
+  clusterer.clearLayers();
   if (visibleMarkers.length) {
-    clusterer.addMarkers(visibleMarkers);
-    const bounds = new google.maps.LatLngBounds();
-    visibleMarkers.forEach((marker) => bounds.extend(marker.getPosition()));
-    map.fitBounds(bounds, 70);
+    clusterer.addLayers(visibleMarkers);
+    const bounds = L.featureGroup(visibleMarkers).getBounds();
+    map.fitBounds(bounds, { padding: [70, 70] });
   } else {
-    map.setCenter({ lat: 20, lng: 0 });
-    map.setZoom(2);
+    map.setView([20, 0], 2);
   }
+
+  map.closePopup();
 }
 
 function updateResultsSummary(filtered, searchText, filterValue) {
@@ -274,7 +243,9 @@ function updateResultsSummary(filtered, searchText, filterValue) {
   }
 
   const filterLabel =
-    filterValue === "all" ? "all locations" : TYPE_LABELS[filterValue];
+    filterValue === "all"
+      ? "all locations"
+      : TYPE_LABELS[filterValue] || "locations";
 
   if (!filtered.length) {
     summary.textContent = "No locations match your search.";
@@ -311,8 +282,7 @@ function updateResultsList(filtered) {
         (markerItem) => markerItem.location.id === location.id
       );
       if (markerEntry) {
-        map.panTo(markerEntry.marker.getPosition());
-        map.setZoom(12);
+        map.setView(markerEntry.marker.getLatLng(), 12);
         openInfoWindow(location, markerEntry.marker);
         updatePanel(location);
       }
@@ -323,8 +293,17 @@ function updateResultsList(filtered) {
 }
 
 function openInfoWindow(location, marker) {
-  infoWindow.setContent(renderInfoWindowContent(location));
-  infoWindow.open({ map, anchor: marker });
+  const content = renderInfoWindowContent(location);
+  if (marker.getPopup()) {
+    marker.setPopupContent(content);
+  } else {
+    marker.bindPopup(content, {
+      closeButton: true,
+      className: "info-popup",
+      maxWidth: 280,
+    });
+  }
+  marker.openPopup();
 }
 
 function updatePanel(location) {
@@ -424,15 +403,20 @@ function getMarkerIcon(type) {
 
   const fill = colorMap[type] || "#2563eb";
 
-  return {
-    path: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z",
-    fillColor: fill,
-    fillOpacity: 1,
-    strokeColor: "#ffffff",
-    strokeWeight: 1.5,
-    scale: 1.5,
-    anchor: new google.maps.Point(12, 22),
-  };
+  const svg = `
+    <svg width="28" height="36" viewBox="0 0 24 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2C7.58 2 4 5.58 4 10c0 6 8 16 8 16s8-10 8-16c0-4.42-3.58-8-8-8z" fill="${fill}" stroke="#ffffff" stroke-width="1.5"/>
+      <circle cx="12" cy="10" r="3.2" fill="#ffffff"/>
+    </svg>
+  `.trim();
+
+  return L.divIcon({
+    className: "custom-marker",
+    html: svg,
+    iconSize: [28, 36],
+    iconAnchor: [14, 36],
+    popupAnchor: [0, -32],
+  });
 }
 
 function escapeHtml(value) {
@@ -448,4 +432,4 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-window.initMap = initMap;
+document.addEventListener("DOMContentLoaded", initMap);
