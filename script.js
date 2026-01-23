@@ -112,6 +112,8 @@ const TYPE_LABELS = {
 let map;
 let markers = [];
 let clusterer;
+let searchResultLayer;
+let searchRequestId = 0;
 
 function initMap() {
   const mapElement = document.getElementById("map");
@@ -125,7 +127,7 @@ function initMap() {
   }).setView([54.5, -2.5], 5);
 
   L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+    "https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png",
     {
       attribution:
         "Map data (c) OpenStreetMap contributors, tiles by CARTO",
@@ -137,6 +139,8 @@ function initMap() {
     showCoverageOnHover: false,
     maxClusterRadius: 48,
   });
+
+  searchResultLayer = L.layerGroup().addTo(map);
 
   markers = LOCATION_DATA.map((location) => {
     const marker = L.marker([location.lat, location.lng], {
@@ -169,7 +173,7 @@ function wireControls() {
   }
 
   const runSearch = () => {
-    syncResults(searchInput.value.trim(), filterSelect.value);
+    executeSearch(searchInput.value.trim(), filterSelect.value);
   };
 
   searchButton.addEventListener("click", runSearch);
@@ -179,6 +183,27 @@ function wireControls() {
     }
   });
   filterSelect.addEventListener("change", runSearch);
+}
+
+async function executeSearch(searchText, filterValue) {
+  const requestId = ++searchRequestId;
+  const filtered = syncResults(searchText, filterValue);
+
+  if (!searchText || filtered.length > 0) {
+    clearSearchResult();
+    return;
+  }
+
+  const geocoded = await geocodeQuery(searchText);
+  if (requestId !== searchRequestId) {
+    return;
+  }
+
+  if (geocoded) {
+    showSearchResult(geocoded);
+  } else {
+    clearSearchResult();
+  }
 }
 
 function syncResults(searchText = "", filterValue = "all") {
@@ -212,6 +237,8 @@ function syncResults(searchText = "", filterValue = "all") {
   updateMarkers(filtered);
   updateResultsList(filtered);
   updateResultsSummary(filtered, searchText, filterValue);
+
+  return filtered;
 }
 
 function updateMarkers(filteredLocations) {
@@ -328,29 +355,18 @@ function updatePanel(location) {
 }
 
 function renderInfoWindowContent(location) {
-  const imageSection = location.image
-    ? `<img src="${escapeHtml(location.image)}" alt="${escapeHtml(
-        location.name
-      )}" class="info-window__image" />`
-    : "";
-
   return `
-    <div class="info-window">
-      ${imageSection}
-      <div class="info-window__content">
-        <strong class="info-window__title">${escapeHtml(
-          location.name
-        )}</strong>
-        <div class="info-window__text">${escapeHtml(
-          TYPE_LABELS[location.type] || "Location"
-        )}</div>
-        <div class="info-window__text">${formatAddress(location.address)}</div>
-        <div class="info-window__text">${formatContact(location)}</div>
+    <div class="popup-card">
+      ${renderPopupImage(location)}
+      <div class="popup-card__body">
+        <div class="popup-card__title">${escapeHtml(location.name)}</div>
+        ${renderAddressBlock(location.address)}
+        ${renderContactRows(location)}
         ${
           location.website
-            ? `<a class="info-window__link" href="${escapeHtml(
+            ? `<a class="popup-card__button" href="${escapeHtml(
                 location.website
-              )}" target="_blank" rel="noreferrer">Visit location</a>`
+              )}" target="_blank" rel="noreferrer">Find out more</a>`
             : ""
         }
       </div>
@@ -358,39 +374,40 @@ function renderInfoWindowContent(location) {
   `;
 }
 
-function formatAddress(addressLines) {
+function renderPopupImage(location) {
+  if (location.image) {
+    return `
+      <div class="popup-card__image">
+        <img src="${escapeHtml(location.image)}" alt="${escapeHtml(
+      location.name
+    )}" />
+      </div>
+    `;
+  }
+
+  return `
+    <div class="popup-card__image popup-card__image--placeholder">
+      <span>Location</span>
+    </div>
+  `;
+}
+
+function renderAddressLines(addressLines) {
   if (!addressLines || !addressLines.length) {
-    return "Address available on request.";
+    return "";
   }
-  return addressLines.map((line) => escapeHtml(line)).join("<br />");
+
+  return addressLines.map((line) => `<span>${escapeHtml(line)}</span>`).join("");
 }
 
-function formatContact(location) {
-  const contactItems = [];
-
-  if (location.phone) {
-    contactItems.push(`Phone: ${escapeHtml(location.phone)}`);
+function renderAddressBlock(addressLines) {
+  if (!addressLines || !addressLines.length) {
+    return "";
   }
 
-  if (location.contact && location.contact.length) {
-    location.contact.forEach((entry) => {
-      contactItems.push(
-        `${escapeHtml(entry.label)}: ${escapeHtml(entry.value)}`
-      );
-    });
-  }
-
-  if (!contactItems.length) {
-    return "Contact details available on request.";
-  }
-
-  return contactItems.join("<br />");
-}
-
-function formatWebsite(website) {
-  return `<a class="panel-details__link" href="${escapeHtml(
-    website
-  )}" target="_blank" rel="noreferrer">Visit website</a>`;
+  return `<div class="popup-card__address">${renderAddressLines(
+    addressLines
+  )}</div>`;
 }
 
 function getMarkerIcon(type) {
@@ -399,6 +416,7 @@ function getMarkerIcon(type) {
     depot: "#2563eb",
     branch: "#0f766e",
     service: "#7c3aed",
+    search: "#2563eb",
   };
 
   const fill = colorMap[type] || "#2563eb";
@@ -417,6 +435,168 @@ function getMarkerIcon(type) {
     iconAnchor: [14, 36],
     popupAnchor: [0, -32],
   });
+}
+
+function renderContactRows(location) {
+  const entries = getContactEntries(location);
+  if (!entries.length) {
+    return "";
+  }
+
+  return `
+    <div class="popup-card__contact">
+      ${entries.map(renderContactRow).join("")}
+    </div>
+  `;
+}
+
+function getContactEntries(location) {
+  const entries = [];
+
+  if (location.phone) {
+    entries.push({
+      type: "phone",
+      label: location.phone,
+      href: `tel:${String(location.phone).replace(/[^+\d]/g, "")}`,
+    });
+  }
+
+  const emailEntry = (location.contact || []).find(
+    (entry) => entry.value && entry.value.includes("@")
+  );
+
+  if (emailEntry) {
+    entries.push({
+      type: "email",
+      label: emailEntry.value,
+      href: `mailto:${emailEntry.value}`,
+    });
+  }
+
+  return entries;
+}
+
+function renderContactRow(entry) {
+  const icon =
+    entry.type === "phone"
+      ? `<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.5 3.5C6 9 11 14 16.5 15.5L14.5 17.5C13.5 18.5 12 18.5 11 17.5C6.5 13 4 10.5 2.5 6C2 4.5 2.5 3 3.5 2L4.5 3.5z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>`
+      : `<svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 6.5L10 11L17 6.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.4"/></svg>`;
+
+  return `
+    <div class="popup-card__contact-row">
+      <span class="popup-card__icon" aria-hidden="true">${icon}</span>
+      <a href="${escapeHtml(entry.href)}">${escapeHtml(entry.label)}</a>
+    </div>
+  `;
+}
+
+async function geocodeQuery(query) {
+  try {
+    const url = new URL("https://nominatim.openstreetmap.org/search");
+    url.searchParams.set("format", "json");
+    url.searchParams.set("limit", "1");
+    url.searchParams.set("addressdetails", "1");
+    url.searchParams.set("q", query);
+
+    const response = await fetch(url.toString(), {
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const results = await response.json();
+    if (!results.length) {
+      return null;
+    }
+
+    const result = results[0];
+
+    return {
+      lat: parseFloat(result.lat),
+      lng: parseFloat(result.lon),
+      displayName: result.display_name,
+      address: result.address || {},
+    };
+  } catch (error) {
+    return null;
+  }
+}
+
+function showSearchResult(result) {
+  if (!searchResultLayer) {
+    return;
+  }
+
+  const popupData = buildSearchPopupData(result);
+  const marker = L.marker([result.lat, result.lng], {
+    title: popupData.title,
+    icon: getMarkerIcon("search"),
+  });
+
+  marker.bindPopup(renderSearchResultContent(popupData), {
+    closeButton: true,
+    className: "info-popup",
+    maxWidth: 280,
+  });
+
+  searchResultLayer.clearLayers();
+  searchResultLayer.addLayer(marker);
+  map.setView([result.lat, result.lng], 11);
+  marker.openPopup();
+}
+
+function clearSearchResult() {
+  if (searchResultLayer) {
+    searchResultLayer.clearLayers();
+  }
+}
+
+function buildSearchPopupData(result) {
+  const address = result.address || {};
+  const title =
+    address.city ||
+    address.town ||
+    address.village ||
+    address.county ||
+    result.displayName.split(",")[0];
+
+  const rawLines = [
+    address.road,
+    address.suburb,
+    address.city || address.town || address.village || address.county,
+    address.state,
+    address.postcode,
+    address.country,
+  ].filter(Boolean);
+
+  const uniqueLines = Array.from(new Set(rawLines));
+
+  return {
+    title,
+    lines: uniqueLines,
+  };
+}
+
+function renderSearchResultContent(data) {
+  const lines = data.lines.length
+    ? data.lines.map((line) => `<span>${escapeHtml(line)}</span>`).join("")
+    : `<span>${escapeHtml(data.title)}</span>`;
+
+  return `
+    <div class="popup-card">
+      <div class="popup-card__image popup-card__image--placeholder">
+        <span>Search result</span>
+      </div>
+      <div class="popup-card__body">
+        <div class="popup-card__title">${escapeHtml(data.title)}</div>
+        <div class="popup-card__address">${lines}</div>
+      </div>
+    </div>
+  `;
 }
 
 function escapeHtml(value) {
