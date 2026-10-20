@@ -1,0 +1,52 @@
+{
+	"address": "Милана Ракића 38, 11120 Београд",
+	"pak": "ПАК 145214",
+	"phones": [
+		"+381-11-2417-687",
+		"+381-11-2417-155",
+		"+381-11-2414-527",
+		"+381-11-2419-190"
+	],
+	"email": "office@zvezdarateatar.rs",
+	"boxPhone": "+381-11-2419-664",
+	"boxEmail": "blagajna@zvezdarateatar.rs",
+	"hours": "Радним данима 12–18 часова, односно до почетка представе. Викендом два сата пре почетка представе.",
+	"social": [
+		{
+			"label": "Facebook",
+			"href": "https://sr-rs.facebook.com/zvezdarateatar/"
+		},
+		{
+			"label": "Instagram",
+			"href": "https://www.instagram.com/zvezdarateatar/"
+		},
+		{
+			"label": "YouTube",
+			"href": "https://www.youtube.com/user/ZvezdaraTeatar"
+		}
+	],
+	"partners": [
+		{
+			"label": "Београд",
+			"href": "http://www.beograd.rs/"
+		},
+		{
+			"label": "Министарство културе",
+			"href": "http://www.kultura.gov.rs/"
+		},
+		{
+			"label": "УДУС",
+			"href": "http://www.udus.org.rs/"
+		}
+	],
+	"credits": [
+		{
+			"label": "Global Webmasters",
+			"href": "https://www.global-webmasters.com/"
+		},
+		{
+			"label": "WBS Digital",
+			"href": "https://www.wbsdigital.com/izrada-web-sajta"
+		}
+	]
+}

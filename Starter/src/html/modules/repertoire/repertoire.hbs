@@ -1,0 +1,27 @@
+<section class="repertoire" data-reveal>
+	<div class="wrap">
+		<header class="section-head">
+			<p class="kicker">{{data.repertoire.kicker}}</p>
+			<h2>{{data.repertoire.title}}</h2>
+		</header>
+		{{#if (compare data.repertoire.mode "===" "index")}}
+			<ul class="repertoire__index">
+				{{#each data.repertoire.plays}}
+					<li>
+						<a href="{{{url}}}" target="_blank" rel="noopener noreferrer">
+							<span>{{title}}</span>
+							<small>{{scene}}</small>
+						</a>
+					</li>
+				{{/each}}
+			</ul>
+			<a class="text-link" href="{{assetPrefix}}predstave/">Отвори репертоар</a>
+		{{else}}
+			<ul class="repertoire__grid">
+				{{#each data.repertoire.plays}}
+					<li>{{> play-card}}</li>
+				{{/each}}
+			</ul>
+		{{/if}}
+	</div>
+</section>

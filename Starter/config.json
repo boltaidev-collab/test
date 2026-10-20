@@ -1,0 +1,16 @@
+{
+	"mode": "development",
+	"isMultilanguage": false,
+	"defaultLanguage": "en",
+	"languages": [
+		"en"
+	],
+	"path": "./",
+	"isCMSVersion": true,
+	"foldersToIgnoreInDist": [
+		"media",
+		"umbraco",
+		"lockdownrobots.txt"
+	],
+	"errorPage": false
+}

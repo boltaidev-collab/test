@@ -1,0 +1,31 @@
+<section class="contact" data-reveal>
+	<div class="wrap contact__grid">
+		<article class="panel">
+			<h2>Управа</h2>
+			<p>{{data.contact.address}}</p>
+			<p>
+				{{#each data.contact.phones}}
+					<a href="tel:{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}
+				{{/each}}
+			</p>
+			<p><a href="mailto:{{data.contact.email}}">{{data.contact.email}}</a></p>
+			<p class="hours">{{data.contact.hours}}</p>
+			<p>{{data.contact.note}}</p>
+			<p>Рекламације: <a href="mailto:{{data.contact.claims}}">{{data.contact.claims}}</a></p>
+			<p>Благајна: <a href="tel:{{data.contact.boxPhone}}">{{data.contact.boxPhone}}</a>, <a href="mailto:{{data.contact.boxEmail}}">{{data.contact.boxEmail}}</a></p>
+			<p><a href="{{{data.contact.officialUrl}}}" target="_blank" rel="noopener noreferrer">{{data.contact.officialLabel}}</a></p>
+		</article>
+		<article class="panel">
+			<h2>Коме писати</h2>
+			<div class="person-list">
+				{{#each data.contact.people}}
+					<div>
+						<strong>{{role}}</strong>
+						<span>{{name}}</span>
+						<a href="mailto:{{email}}">{{email}}</a>
+					</div>
+				{{/each}}
+			</div>
+		</article>
+	</div>
+</section>

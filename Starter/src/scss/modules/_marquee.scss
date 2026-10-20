@@ -1,0 +1,32 @@
+.marquee {
+	overflow: hidden;
+	border-block: 1px solid var(--line);
+	background: rgb(18 23 34 / 0.8);
+	color: var(--cream);
+}
+
+.marquee__track {
+	display: flex;
+	width: max-content;
+	animation: marquee 38s linear infinite;
+}
+
+.marquee__group {
+	display: flex;
+	flex-shrink: 0;
+	gap: 2.5rem;
+	padding: 0.55rem 1.25rem;
+	font-size: 0.82rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+
+	to {
+		transform: translateX(-50%);
+	}
+}

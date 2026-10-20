@@ -1,0 +1,19 @@
+:root {
+	--bg: #080a10;
+	--bg-raise: #121722;
+	--bg-soft: #1a2130;
+	--cream: #f4ecdf;
+	--muted: #c8bdae;
+	--gold: #e4c78a;
+	--line: rgb(244 236 223 / 0.16);
+	--serif: "Cormorant Garamond", "Times New Roman", serif;
+	--sans: "Manrope", "Segoe UI", sans-serif;
+	--wrap: 72rem;
+	--header: 4.6rem;
+	--ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@mixin wrap {
+	width: min(calc(100% - 2.4rem), var(--wrap));
+	margin-inline: auto;
+}

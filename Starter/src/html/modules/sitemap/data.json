@@ -1,0 +1,287 @@
+{
+	"intro": "Сви линкови са почетне стране званичног сајта, груписани. Сваки отвара оригиналну адресу.",
+	"groups": [
+		{
+			"title": "Кућа",
+			"links": [
+				{
+					"label": "Почетна",
+					"href": "https://zvezdarateatar.rs/"
+				},
+				{
+					"label": "Представе",
+					"href": "https://zvezdarateatar.rs/predstave/"
+				},
+				{
+					"label": "Вести",
+					"href": "https://zvezdarateatar.rs/vesti/"
+				},
+				{
+					"label": "Блог",
+					"href": "https://zvezdarateatar.rs/blog-list/"
+				},
+				{
+					"label": "Актуалности",
+					"href": "https://zvezdarateatar.rs/aktuelnosti/"
+				},
+				{
+					"label": "Историја",
+					"href": "https://zvezdarateatar.rs/istorija/"
+				},
+				{
+					"label": "Све премијере",
+					"href": "https://zvezdarateatar.rs/sve-premijere/"
+				},
+				{
+					"label": "40 година Звездара театра",
+					"href": "https://www.kucamedjuzvezdama.rs"
+				}
+			]
+		},
+		{
+			"title": "Улазнице",
+			"links": [
+				{
+					"label": "Купи улазнице / репертоар",
+					"href": "https://bilet.zvezdarateatar.rs/repertoar.php#danas"
+				},
+				{
+					"label": "Резервација улазнице",
+					"href": "https://zvezdarateatar.rs/rezervacija-ulaznice/"
+				},
+				{
+					"label": "Резервација улазница, страница",
+					"href": "https://zvezdarateatar.rs/page/rezervacija-ulaznica/"
+				},
+				{
+					"label": "Цене",
+					"href": "https://zvezdarateatar.rs/page/cene/"
+				},
+				{
+					"label": "Попусти",
+					"href": "https://zvezdarateatar.rs/page/popusti/"
+				},
+				{
+					"label": "Услови замене и враћања",
+					"href": "https://zvezdarateatar.rs/page/uslovi-zamene-i-vracanja-ulaznica/"
+				},
+				{
+					"label": "Услови коришћења",
+					"href": "https://zvezdarateatar.rs/page/uslovi-koriscenja/"
+				},
+				{
+					"label": "Систем за онлајн куповину",
+					"href": "https://zvezdarateatar.rs/page/sistem-za-onlajn-kupovinu/"
+				}
+			]
+		},
+		{
+			"title": "Представе",
+			"links": [
+				{
+					"label": "Професионалац",
+					"href": "https://zvezdarateatar.rs/predstava/profesionalac/53/"
+				},
+				{
+					"label": "Уна",
+					"href": "https://zvezdarateatar.rs/predstava/una/42/"
+				},
+				{
+					"label": "Удовица живог човека",
+					"href": "https://zvezdarateatar.rs/predstava/udovica-zivog-coveka/30/"
+				},
+				{
+					"label": "Кућа",
+					"href": "https://zvezdarateatar.rs/predstava/kuca/28/"
+				},
+				{
+					"label": "То кад увати не пушта",
+					"href": "https://zvezdarateatar.rs/predstava/to-kad-uvati-ne-pusta/29/"
+				},
+				{
+					"label": "Књига о Милутину",
+					"href": "https://zvezdarateatar.rs/predstava/knjiga-o-milutinu-deo-prvi/10/"
+				},
+				{
+					"label": "Спортско срце",
+					"href": "https://zvezdarateatar.rs/predstava/sportsko-srce/23/"
+				},
+				{
+					"label": "Тре сореле",
+					"href": "https://zvezdarateatar.rs/predstava/tre-sorele/12/"
+				},
+				{
+					"label": "Љубав у Савамали",
+					"href": "https://zvezdarateatar.rs/predstava/ljubav-u-savamali/14/"
+				},
+				{
+					"label": "Осама-Касаба у Њујорку",
+					"href": "https://zvezdarateatar.rs/predstava/osama-kasaba-u-njujorku/15/"
+				},
+				{
+					"label": "Пасивно пушење",
+					"href": "https://zvezdarateatar.rs/predstava/pasivno-pusenje/18/"
+				},
+				{
+					"label": "Клаустрофобична комедија",
+					"href": "https://zvezdarateatar.rs/predstava/klaustrofobicna-komedija/19/"
+				},
+				{
+					"label": "Воз",
+					"href": "https://zvezdarateatar.rs/predstava/voz/21/"
+				},
+				{
+					"label": "Бајка о позоришту",
+					"href": "https://zvezdarateatar.rs/predstava/bajka-o-pozoristu/20/"
+				}
+			]
+		},
+		{
+			"title": "Посета",
+			"links": [
+				{
+					"label": "Контакт",
+					"href": "https://zvezdarateatar.rs/kontakt/"
+				},
+				{
+					"label": "Како доћи до нас",
+					"href": "https://zvezdarateatar.rs/page/kako-doci-do-nas/"
+				},
+				{
+					"label": "Паркинг зоне",
+					"href": "https://zvezdarateatar.rs/page/korisne-informacije-parking-zone/"
+				},
+				{
+					"label": "Кашњење на представу",
+					"href": "https://zvezdarateatar.rs/page/kasnjenje-na-predstavu/"
+				},
+				{
+					"label": "Где попити пиће",
+					"href": "https://zvezdarateatar.rs/page/gde-popiti-pice/"
+				},
+				{
+					"label": "Виртуелна тура",
+					"href": "https://zvezdarateatar.rs/page/virtuelna-tura/"
+				},
+				{
+					"label": "Инфо",
+					"href": "https://zvezdarateatar.rs/page/info/"
+				}
+			]
+		},
+		{
+			"title": "О кући",
+			"links": [
+				{
+					"label": "Душан Ковачевић",
+					"href": "https://zvezdarateatar.rs/dusan-kovacevic/"
+				},
+				{
+					"label": "Данило Бата Стојковић",
+					"href": "https://zvezdarateatar.rs/danilo-bata-stojkovic/"
+				},
+				{
+					"label": "Техника",
+					"href": "https://zvezdarateatar.rs/tehnika/"
+				},
+				{
+					"label": "Акта",
+					"href": "https://zvezdarateatar.rs/page/akta/"
+				},
+				{
+					"label": "Јавне набавке",
+					"href": "https://zvezdarateatar.rs/javne-nabavke/"
+				},
+				{
+					"label": "Документа",
+					"href": "https://zvezdarateatar.rs/dokumenta/"
+				},
+				{
+					"label": "Информације о ковиду",
+					"href": "https://zvezdarateatar.rs/page/covid-19/"
+				}
+			]
+		},
+		{
+			"title": "Језик на званичном сајту",
+			"links": [
+				{
+					"label": "Ћирилица",
+					"href": "https://zvezdarateatar.rs/set-version.php?lang=cir"
+				},
+				{
+					"label": "Латиница",
+					"href": "https://zvezdarateatar.rs/set-version.php?lang=lat"
+				}
+			]
+		},
+		{
+			"title": "Нови сајт",
+			"links": [
+				{
+					"label": "Резервација улазнице",
+					"href": "https://novi.zvezdarateatar.rs/rezervacija-ulaznice/"
+				},
+				{
+					"label": "Контакт",
+					"href": "https://novi.zvezdarateatar.rs/kontakt/"
+				},
+				{
+					"label": "Актуалности",
+					"href": "https://novi.zvezdarateatar.rs/aktuelnosti/"
+				},
+				{
+					"label": "Блог",
+					"href": "https://novi.zvezdarateatar.rs/blog-list/"
+				}
+			]
+		},
+		{
+			"title": "Друштвене мреже",
+			"links": [
+				{
+					"label": "Facebook",
+					"href": "https://sr-rs.facebook.com/zvezdarateatar/"
+				},
+				{
+					"label": "Instagram",
+					"href": "https://www.instagram.com/zvezdarateatar/"
+				},
+				{
+					"label": "YouTube",
+					"href": "https://www.youtube.com/user/ZvezdaraTeatar"
+				}
+			]
+		},
+		{
+			"title": "Установе",
+			"links": [
+				{
+					"label": "Град Београд",
+					"href": "http://www.beograd.rs/"
+				},
+				{
+					"label": "Министарство културе",
+					"href": "http://www.kultura.gov.rs/"
+				},
+				{
+					"label": "Удружење драмских уметника Србије",
+					"href": "http://www.udus.org.rs/"
+				}
+			]
+		},
+		{
+			"title": "Захвалност",
+			"links": [
+				{
+					"label": "Global Webmasters",
+					"href": "https://www.global-webmasters.com/"
+				},
+				{
+					"label": "WBS Digital",
+					"href": "https://www.wbsdigital.com/izrada-web-sajta"
+				}
+			]
+		}
+	]
+}

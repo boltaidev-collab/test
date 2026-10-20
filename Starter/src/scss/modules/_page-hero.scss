@@ -1,0 +1,15 @@
+.page-hero {
+	padding: clamp(2.8rem, 7vw, 5.5rem) 0 0.5rem;
+}
+
+.page-hero h1 {
+	max-width: 12ch;
+	font-family: var(--serif);
+	font-size: clamp(3.2rem, 8vw, 6.4rem);
+	font-weight: 500;
+	line-height: 0.9;
+}
+
+.page-hero .lede {
+	margin-top: 1rem;
+}

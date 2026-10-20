@@ -1,0 +1,20 @@
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers';
+import createFiles from '../scripts/createFiles/index.mjs';
+
+const argv = await yargs(hideBin(process.argv))
+	.option('i', { type: 'string', describe: 'Create an item' })
+	.option('m', { type: 'string', describe: 'Create a module' })
+	.option('t', { type: 'string', describe: 'Create a template' })
+	.help()
+	.parse();
+
+if (argv.i) {
+	createFiles.createFile(argv.i, 'item');
+} else if (argv.m) {
+	createFiles.createFile(argv.m, 'module');
+} else if (argv.t) {
+	createFiles.createFile(argv.t, 'template');
+} else {
+	console.log('Use npm run cf -- -i item-name | -m module-name | -t template-name'); // eslint-disable-line no-console
+}

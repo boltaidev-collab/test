@@ -1,0 +1,28 @@
+<a class="skip-link" href="#sadrzaj">Прескочи на садржај</a>
+<header class="site-header" data-script="navigation">
+	<div class="site-header__bar">
+		<a class="brand" href="{{{assetPrefix}}}">
+			<svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true">
+				<path fill="currentColor" d="M16 2.2 18.7 12h9.1l-7.4 5.4 2.8 8.8L16 20.8 8.8 26.2l2.8-8.8L4.2 12h9.1z"/>
+			</svg>
+			<span class="brand__name">Звездара <small>театар</small></span>
+		</a>
+		<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-glavni">Мени</button>
+		<nav class="nav" id="nav-glavni" aria-label="Главно">
+			<ul class="nav__list">
+				{{#each data.header.links}}
+					<li>
+						<a class="nav__link{{#if (compare page "===" @root.page)}} is-active{{/if}}" href="{{@root.assetPrefix}}{{{href}}}" {{#if (compare page "===" @root.page)}}aria-current="page"{{/if}}>{{label}}</a>
+					</li>
+				{{/each}}
+			</ul>
+			<div class="nav__tools">
+				<p class="lang">
+					<a href="{{{data.header.cirUrl}}}" hreflang="sr" title="Ћирилица на званичном сајту">ћир</a>
+					<a href="{{{data.header.latUrl}}}" hreflang="sr-Latn" title="Латиница на званичном сајту">lat</a>
+				</p>
+				<a class="button nav__ticket" href="{{{data.header.ticketUrl}}}" target="_blank" rel="noopener noreferrer">{{data.header.ticketLabel}}</a>
+			</div>
+		</nav>
+	</div>
+</header>

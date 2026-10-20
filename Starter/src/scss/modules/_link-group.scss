@@ -1,0 +1,21 @@
+.link-group h2 {
+	margin-bottom: 0.7rem;
+	font-family: var(--serif);
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+.link-group ul {
+	list-style: none;
+}
+
+.link-group a {
+	display: inline-block;
+	padding: 0.28rem 0;
+	color: var(--muted);
+	text-decoration: none;
+
+	&:hover {
+		color: var(--cream);
+	}
+}

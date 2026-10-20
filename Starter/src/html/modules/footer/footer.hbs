@@ -1,0 +1,41 @@
+<footer class="site-footer">
+	<div class="wrap site-footer__grid">
+		<div>
+			<h2>Звездара театар</h2>
+			<p>{{data.footer.address}}</p>
+			<p>{{data.footer.pak}}</p>
+			<p>
+				{{#each data.footer.phones}}
+					<a href="tel:{{this}}">{{this}}</a>{{#unless @last}}, {{/unless}}
+				{{/each}}
+			</p>
+			<p><a href="mailto:{{data.footer.email}}">{{data.footer.email}}</a></p>
+		</div>
+		<div>
+			<h2>Благајна</h2>
+			<p><a href="tel:{{data.footer.boxPhone}}">{{data.footer.boxPhone}}</a></p>
+			<p><a href="mailto:{{data.footer.boxEmail}}">{{data.footer.boxEmail}}</a></p>
+			<p>{{data.footer.hours}}</p>
+			<p>Продаја улазница и званична документа отварају се на сајту Звездара театра.</p>
+		</div>
+		<div>
+			<h2>Мреже</h2>
+			<ul>
+				{{#each data.footer.social}}
+					<li><a href="{{{href}}}" target="_blank" rel="noopener noreferrer">{{label}}</a></li>
+				{{/each}}
+				{{#each data.footer.partners}}
+					<li><a href="{{{href}}}" target="_blank" rel="noopener noreferrer">{{label}}</a></li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+	<div class="wrap site-footer__base">
+		<p>© {{year}} Звездара театар</p>
+		<p>
+			{{#each data.footer.credits}}
+				<a href="{{{href}}}" target="_blank" rel="noopener noreferrer">{{label}}</a>{{#unless @last}} · {{/unless}}
+			{{/each}}
+		</p>
+	</div>
+</footer>

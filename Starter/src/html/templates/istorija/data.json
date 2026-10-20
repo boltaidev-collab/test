@@ -1,0 +1,19 @@
+{
+	"title": "Историја — Звездара театар",
+	"description": "Звездара театар отворен је 8. октобра 1984. представом Мрешћење шарана.",
+	"bodyCssClass": "page-history",
+	"page": "istorija",
+	"output": "istorija/index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"scripts": true,
+		"history": true,
+		"pageHero": {
+			"kicker": "Од 1984.",
+			"title": "Историја",
+			"lede": "Кратак преглед куће која је настала у магацину, а остала позориште пројеката."
+		}
+	}
+}

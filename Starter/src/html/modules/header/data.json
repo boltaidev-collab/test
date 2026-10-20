@@ -1,0 +1,43 @@
+{
+	"links": [
+		{
+			"label": "Почетна",
+			"page": "home",
+			"href": ""
+		},
+		{
+			"label": "Представе",
+			"page": "predstave",
+			"href": "predstave/"
+		},
+		{
+			"label": "Историја",
+			"page": "istorija",
+			"href": "istorija/"
+		},
+		{
+			"label": "Вести",
+			"page": "vesti",
+			"href": "vesti/"
+		},
+		{
+			"label": "Цене",
+			"page": "cene",
+			"href": "cene/"
+		},
+		{
+			"label": "Контакт",
+			"page": "kontakt",
+			"href": "kontakt/"
+		},
+		{
+			"label": "Мапа",
+			"page": "mapa",
+			"href": "mapa/"
+		}
+	],
+	"ticketLabel": "Купи улазнице",
+	"ticketUrl": "https://bilet.zvezdarateatar.rs/repertoar.php#danas",
+	"cirUrl": "https://zvezdarateatar.rs/set-version.php?lang=cir",
+	"latUrl": "https://zvezdarateatar.rs/set-version.php?lang=lat"
+}

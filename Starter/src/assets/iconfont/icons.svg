@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="icons" horiz-adv-x="64">
+    <font-face font-family="icons"
+      units-per-em="64" ascent="64"
+      descent="0" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="ico-star"
+      unicode="&#xF101;"
+      horiz-adv-x="64" d="M32 60L39 40H60L43 28L49 6L32 18L15 6L21 28L4 40H25z" />
+    <glyph glyph-name="ico-star-1"
+      unicode="&#x69;&#x63;&#x6F;&#x2D;&#x73;&#x74;&#x61;&#x72;"
+      horiz-adv-x="64" d="M32 60L39 40H60L43 28L49 6L32 18L15 6L21 28L4 40H25z" />
+  </font>
+</defs>
+</svg>

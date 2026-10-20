@@ -1,0 +1,20 @@
+.person-list {
+	display: grid;
+	gap: 0.85rem;
+	margin-top: 1rem;
+}
+
+.person-list div {
+	padding-top: 0.75rem;
+	border-top: 1px solid var(--line);
+}
+
+.person-list strong {
+	display: block;
+	font-weight: 600;
+}
+
+.person-list span,
+.hours {
+	color: var(--muted);
+}

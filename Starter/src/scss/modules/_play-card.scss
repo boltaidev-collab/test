@@ -1,0 +1,44 @@
+.play-card {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	height: 100%;
+	padding: 1.3rem 0 1.5rem;
+	border-top: 1px solid var(--line);
+}
+
+.play-card__scene {
+	color: var(--gold);
+	font-size: 0.75rem;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.play-card__title {
+	font-family: var(--serif);
+	font-size: clamp(2rem, 3vw, 2.8rem);
+	font-weight: 500;
+	line-height: 0.95;
+
+	a {
+		text-decoration: none;
+	}
+}
+
+.play-card__quote {
+	color: var(--cream);
+	font-family: var(--serif);
+	font-size: 1.35rem;
+	font-style: italic;
+	line-height: 1.35;
+}
+
+.play-card__note,
+.play-card__cast {
+	color: var(--muted);
+	font-size: 0.95rem;
+}
+
+.play-card .text-link {
+	margin-top: auto;
+}

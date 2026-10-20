@@ -1,0 +1,42 @@
+.table-wrap {
+	overflow-x: auto;
+	margin-top: 0.8rem;
+}
+
+.prices table {
+	width: 100%;
+	min-width: 36rem;
+	font-size: 0.95rem;
+}
+
+.prices th,
+.prices td {
+	padding: 0.75rem 0.6rem;
+	border-bottom: 1px solid var(--line);
+	text-align: left;
+}
+
+.prices th {
+	color: var(--gold);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.prices h2 {
+	margin: 2rem 0 0.4rem;
+	font-family: var(--serif);
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 500;
+}
+
+.prices__rules {
+	display: grid;
+	gap: 0.8rem;
+	margin-top: 1.5rem;
+}
+
+.prices__rules li {
+	color: var(--muted);
+}

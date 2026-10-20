@@ -1,0 +1,19 @@
+{
+	"title": "Вести — Звездара театар",
+	"description": "Актуелне вести Звездара театра: јубилеји, гостовања и разговори.",
+	"bodyCssClass": "page-news",
+	"page": "vesti",
+	"output": "vesti/index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"scripts": true,
+		"news": true,
+		"pageHero": {
+			"kicker": "Октобар 2026.",
+			"title": "Вести",
+			"lede": "Четири последње објаве са званичног сајта. Цела архива остаје тамо."
+		}
+	}
+}

@@ -1,0 +1,10 @@
+<section class="sitemap" data-reveal>
+	<div class="wrap">
+		<p class="lede">{{data.sitemap.intro}}</p>
+		<div class="sitemap__grid">
+			{{#each data.sitemap.groups}}
+				{{> link-group}}
+			{{/each}}
+		</div>
+	</div>
+</section>
