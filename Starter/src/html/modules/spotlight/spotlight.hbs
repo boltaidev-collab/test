@@ -1,0 +1,17 @@
+<section class="spotlight" data-script="spotlight" data-reveal>
+	<div class="wrap">
+		<header class="section-head">
+			<p class="kicker">{{data.spotlight.kicker}}</p>
+			<h2>{{data.spotlight.title}}</h2>
+		</header>
+		<div class="splide" aria-label="Издвојене представе">
+			<div class="splide__track">
+				<ul class="splide__list spotlight__list">
+					{{#each data.spotlight.slides}}
+						<li class="splide__slide">{{> play-card}}</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

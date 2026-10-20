@@ -1,0 +1,25 @@
+.guest {
+	padding-bottom: 1rem;
+}
+
+.guest__card {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 1rem 2rem;
+	padding: 1.2rem 0;
+	border-block: 1px solid var(--line);
+}
+
+.guest__card a {
+	color: var(--cream);
+	font-family: var(--serif);
+	font-size: clamp(1.8rem, 3vw, 2.6rem);
+	line-height: 1;
+	text-decoration: none;
+}
+
+.guest__when {
+	color: var(--gold);
+	letter-spacing: 0.06em;
+}

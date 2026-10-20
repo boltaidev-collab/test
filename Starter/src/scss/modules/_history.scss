@@ -1,0 +1,23 @@
+.history__block + .history__block {
+	margin-top: 1.6rem;
+}
+
+.history__block h2 {
+	margin-bottom: 0.45rem;
+	font-family: var(--serif);
+	font-size: clamp(1.8rem, 3vw, 2.5rem);
+	font-weight: 500;
+}
+
+.history__block p {
+	max-width: 46rem;
+	color: var(--muted);
+}
+
+.history__note {
+	margin-top: 2rem;
+	color: var(--gold);
+	font-family: var(--serif);
+	font-size: 1.8rem;
+	font-style: italic;
+}

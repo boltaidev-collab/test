@@ -1,0 +1,3 @@
+import buildProject from '../scripts/build.mjs';
+
+await buildProject('stage');

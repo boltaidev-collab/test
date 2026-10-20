@@ -1,0 +1,40 @@
+.site-footer {
+	padding: 2.5rem 0 1.6rem;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+}
+
+.site-footer__grid {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.site-footer h2 {
+	margin-bottom: 0.55rem;
+	color: var(--cream);
+	font-family: var(--serif);
+	font-size: 1.7rem;
+	font-weight: 500;
+}
+
+.site-footer a {
+	color: var(--gold);
+	text-decoration: none;
+}
+
+.site-footer__base {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.6rem 1.5rem;
+	margin-top: 2rem;
+	padding-top: 1rem;
+	border-top: 1px solid var(--line);
+	font-size: 0.82rem;
+}
+
+@media (min-width: 800px) {
+	.site-footer__grid {
+		grid-template-columns: 1.3fr 1fr 0.8fr;
+	}
+}

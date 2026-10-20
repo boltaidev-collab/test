@@ -1,0 +1,7 @@
+import initSetup from '../helpers/initSetup.mjs';
+import paths from '../helpers/paths.mjs';
+import staticAssets from '../scripts/staticAssets.mjs';
+
+await initSetup.handleNodeVersion();
+initSetup.makeFolderIfMissing(paths.dist);
+await staticAssets.copy();

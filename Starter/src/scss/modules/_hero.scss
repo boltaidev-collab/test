@@ -1,0 +1,83 @@
+.hero {
+	padding: clamp(2.5rem, 7vw, 6rem) 0 clamp(2rem, 5vw, 4rem);
+}
+
+.hero__grid {
+	display: grid;
+	gap: 2.5rem;
+	align-items: end;
+}
+
+.hero__name {
+	display: block;
+	margin-bottom: 0.35rem;
+	color: var(--gold);
+	font-family: var(--sans);
+	font-size: 0.78rem;
+	font-weight: 600;
+	letter-spacing: 0.28em;
+	text-transform: uppercase;
+}
+
+.hero__tag {
+	display: block;
+	max-width: 11ch;
+	font-family: var(--serif);
+	font-size: clamp(3.4rem, 9vw, 7.4rem);
+	font-weight: 500;
+	line-height: 0.88;
+}
+
+.hero__tag em {
+	font-style: italic;
+	font-weight: 500;
+}
+
+.hero .lede {
+	margin-top: 1.4rem;
+}
+
+.hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 1.8rem;
+}
+
+.hero__sky {
+	position: relative;
+	min-height: 18rem;
+	color: var(--gold);
+}
+
+.constellation {
+	width: min(100%, 34rem);
+	margin-left: auto;
+}
+
+.constellation__lines path {
+	stroke-dasharray: 8 10;
+	animation: drift 18s linear infinite;
+}
+
+.hero__since {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	color: var(--muted);
+	font-size: 0.78rem;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+@keyframes drift {
+	to {
+		stroke-dashoffset: -180;
+	}
+}
+
+@media (min-width: 900px) {
+	.hero__grid {
+		grid-template-columns: 1.1fr 0.9fr;
+	}
+}

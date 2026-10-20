@@ -1,0 +1,19 @@
+{
+	"title": "Мапа сајта — Звездара театар",
+	"description": "Сви линкови са почетне стране Звездара театра.",
+	"bodyCssClass": "page-map",
+	"page": "mapa",
+	"output": "mapa/index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"scripts": true,
+		"sitemap": true,
+		"pageHero": {
+			"kicker": "Сви линкови",
+			"title": "Мапа сајта",
+			"lede": "Свака ставка отвара званичну адресу у новом прозору."
+		}
+	}
+}

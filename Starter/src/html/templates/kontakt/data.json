@@ -1,0 +1,20 @@
+{
+	"title": "Контакт — Звездара театар",
+	"description": "Звездара театар, Милана Ракића 38, Београд. Телефони благајне и управе.",
+	"bodyCssClass": "page-contact",
+	"page": "kontakt",
+	"output": "kontakt/index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"scripts": true,
+		"contact": true,
+		"visit": true,
+		"pageHero": {
+			"kicker": "Благајна и управа",
+			"title": "Контакт",
+			"lede": "Адреса, телефони и радно време. Поруке иду директно позоришту."
+		}
+	}
+}

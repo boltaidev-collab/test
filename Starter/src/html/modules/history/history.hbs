@@ -1,0 +1,13 @@
+<section class="history" data-reveal>
+	<div class="wrap">
+		{{#each data.history.blocks}}
+			<article class="history__block">
+				<h2>{{title}}</h2>
+				<p>{{text}}</p>
+			</article>
+		{{/each}}
+		<p class="history__note">{{data.history.closing}}</p>
+		<p><a class="text-link" href="{{{data.history.filmUrl}}}" target="_blank" rel="noopener noreferrer">{{data.history.filmLabel}}</a></p>
+		<p><a class="text-link" href="{{{data.history.officialUrl}}}" target="_blank" rel="noopener noreferrer">{{data.history.officialLabel}}</a></p>
+	</div>
+</section>

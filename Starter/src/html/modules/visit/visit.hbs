@@ -1,0 +1,25 @@
+<section class="visit" data-reveal>
+	<div class="wrap">
+		<header class="section-head">
+			<p class="kicker">{{data.visit.kicker}}</p>
+			<h2>{{data.visit.title}}</h2>
+		</header>
+		<div class="visit__grid">
+			<article class="panel">
+				<h3>Адреса</h3>
+				<p>{{data.visit.address}}</p>
+				<p class="hours">{{data.visit.hours}}</p>
+			</article>
+			<article class="panel">
+				<h3>Превоз</h3>
+				<p>{{data.visit.trams}}</p>
+				<p>{{data.visit.buses}}</p>
+				<ul>
+					{{#each data.visit.links}}
+						<li><a href="{{{href}}}" target="_blank" rel="noopener noreferrer">{{label}}</a></li>
+					{{/each}}
+				</ul>
+			</article>
+		</div>
+	</div>
+</section>

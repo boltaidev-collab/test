@@ -1,0 +1,14 @@
+<section class="news" data-reveal>
+	<div class="wrap">
+		<header class="section-head">
+			<p class="kicker">{{data.news.kicker}}</p>
+			<h2>{{data.news.title}}</h2>
+		</header>
+		<div class="news__list">
+			{{#each data.news.items}}
+				{{> news-card}}
+			{{/each}}
+		</div>
+		<a class="text-link" href="{{{data.news.archiveUrl}}}" target="_blank" rel="noopener noreferrer">{{data.news.archiveLabel}}</a>
+	</div>
+</section>

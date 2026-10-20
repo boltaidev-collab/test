@@ -1,0 +1,79 @@
+.spotlight,
+.repertoire,
+.news,
+.visit,
+.history,
+.prices,
+.contact,
+.sitemap {
+	padding: clamp(2.5rem, 6vw, 5rem) 0;
+}
+
+.spotlight__list {
+	display: grid;
+	gap: 1.5rem 2rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.splide__track {
+	overflow: hidden;
+}
+
+.splide.is-active .splide__list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+.splide__slide {
+	flex-shrink: 0;
+	list-style: none;
+}
+
+.splide__pagination {
+	display: flex;
+	justify-content: center;
+	gap: 0.45rem;
+	margin-top: 1rem;
+	list-style: none;
+}
+
+.splide__pagination__page {
+	width: 0.45rem;
+	height: 0.45rem;
+	padding: 0;
+	border: 0;
+	border-radius: 50%;
+	background: rgb(244 236 223 / 0.35);
+}
+
+.splide__pagination__page.is-active {
+	background: var(--gold);
+}
+
+.splide__arrows {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 0.8rem;
+}
+
+.splide__arrow {
+	min-width: 2.6rem;
+	min-height: 2.6rem;
+	border: 1px solid var(--line);
+	background: transparent;
+	color: var(--cream);
+}
+
+@media (min-width: 900px) {
+	.spotlight__list {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.splide__pagination,
+	.splide__arrows {
+		display: none;
+	}
+}

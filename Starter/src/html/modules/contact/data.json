@@ -1,0 +1,64 @@
+{
+	"address": "Позориште Звездара театар, Милана Ракића 38, 11120 Београд, ПАК 145214.",
+	"phones": [
+		"+381-11-2417-687",
+		"+381-11-2417-155",
+		"+381-11-2414-527",
+		"+381-11-2419-190"
+	],
+	"email": "office@zvezdarateatar.rs",
+	"boxPhone": "+381-11-2419-664",
+	"boxEmail": "blagajna@zvezdarateatar.rs",
+	"hours": "Радним данима 12–18 часова, односно до почетка представе. Викендом два сата пре почетка представе.",
+	"note": "Питања, сугестије и примедбе шаљу се на имејл позоришта. Ова страница нема образац и не обавља продају улазница.",
+	"claims": "reklamacije@zvezdarateatar.rs",
+	"people": [
+		{
+			"role": "Директор",
+			"name": "Душан Ковачевић",
+			"email": "office@zvezdarateatar.rs"
+		},
+		{
+			"role": "Помоћник директора",
+			"name": "Јасна Новаков",
+			"email": "izvrsni.direktor@zvezdarateatar.rs"
+		},
+		{
+			"role": "Секретар",
+			"name": "Александар Степановић",
+			"email": "administracija@zvezdarateatar.rs"
+		},
+		{
+			"role": "Уметнички секретар",
+			"name": "Мирослава Поповић Степановић",
+			"email": "administracija@zvezdarateatar.rs"
+		},
+		{
+			"role": "Продуцент",
+			"name": "Драгиша Ћургуз",
+			"email": "organizacija@zvezdarateatar.rs"
+		},
+		{
+			"role": "Маркетинг",
+			"name": "Зоја Павловић",
+			"email": "marketing@zvezdarateatar.rs"
+		},
+		{
+			"role": "Маркетинг",
+			"name": "Слађана Николић",
+			"email": "marketing.sladjana@zvezdarateatar.rs"
+		},
+		{
+			"role": "Благајна",
+			"name": "Марија Латиновић, Сузана Арсенић, Ксенија Каписода",
+			"email": "blagajna@zvezdarateatar.rs"
+		},
+		{
+			"role": "Техника",
+			"name": "tehnika@zvezdarateatar.rs",
+			"email": "tehnika@zvezdarateatar.rs"
+		}
+	],
+	"officialLabel": "Контакт на званичном сајту",
+	"officialUrl": "https://zvezdarateatar.rs/kontakt/"
+}

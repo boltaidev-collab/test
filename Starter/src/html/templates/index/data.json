@@ -1,0 +1,21 @@
+{
+	"title": "Звездара Театар - Галаксија легендарних тренутака",
+	"description": "Звездара Театар публика препознаје као позориште са најбољим комедијама у граду.",
+	"bodyCssClass": "page-home",
+	"page": "home",
+	"output": "index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"hero": true,
+		"guest": true,
+		"spotlight": true,
+		"repertoire": {
+			"mode": "index"
+		},
+		"news": true,
+		"visit": true,
+		"scripts": true
+	}
+}

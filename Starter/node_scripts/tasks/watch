@@ -1,0 +1,36 @@
+import chokidar from 'chokidar';
+import buildProject from '../scripts/build.mjs';
+import logger from '../helpers/logger.mjs';
+
+await buildProject('development');
+logger.infoLog('Watching src for changes');
+
+let timer = null;
+let running = false;
+let queued = false;
+
+const rebuild = async() => {
+	if (running) {
+		queued = true;
+		return;
+	}
+	running = true;
+	await buildProject('development', { reset: false });
+	running = false;
+	if (queued) {
+		queued = false;
+		await rebuild();
+	}
+};
+
+chokidar.watch('src', {
+	ignoreInitial: true,
+	awaitWriteFinish: { stabilityThreshold: 80 },
+	ignored: /(^|[/\\])registry\.js$/
+})
+	.on('all', () => {
+		clearTimeout(timer);
+		timer = setTimeout(() => {
+			rebuild();
+		}, 60);
+	});

@@ -1,0 +1,22 @@
+{
+	"title": "Представе — Звездара театар",
+	"description": "Репертоар Звездара театра: комедије и дуодраме на сцени Данило Бата Стојковић и Новој сцени.",
+	"bodyCssClass": "page-repertoire",
+	"page": "predstave",
+	"output": "predstave/index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"scripts": true,
+		"pageHero": {
+			"kicker": "Репертоар",
+			"title": "Представе",
+			"lede": "Четрнаест наслова са званичног репертоара. Свака картица води на страницу представе."
+		},
+		"repertoire": {
+			"mode": "grid",
+			"title": "Све на сцени"
+		}
+	}
+}

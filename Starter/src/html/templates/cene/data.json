@@ -1,0 +1,19 @@
+{
+	"title": "Цене — Звездара театар",
+	"description": "Цене улазница Звездара театра и попусти за студенте, пензионере, школе и фирме.",
+	"bodyCssClass": "page-prices",
+	"page": "cene",
+	"output": "cene/index.html",
+	"data": {
+		"header": true,
+		"footer": true,
+		"marquee": true,
+		"scripts": true,
+		"prices": true,
+		"pageHero": {
+			"kicker": "Благајна",
+			"title": "Цене",
+			"lede": "Цене у динарима, према званичној таблици. Овде се улазнице не наплаћују."
+		}
+	}
+}

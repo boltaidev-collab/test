@@ -1,0 +1,40 @@
+<section class="hero" data-reveal>
+	<div class="wrap hero__grid">
+		<div>
+			<p class="kicker">{{data.hero.kicker}}</p>
+			<h1 class="hero__title">
+				<span class="hero__name">{{data.hero.name}}</span>
+				<span class="hero__tag">Галаксија <em>легендарних</em> тренутака</span>
+			</h1>
+			<p class="lede">{{data.hero.lede}}</p>
+			<div class="hero__actions">
+				<a class="button" href="{{assetPrefix}}{{data.hero.repertoireHref}}">{{data.hero.repertoireLabel}}</a>
+				<a class="button button-ghost" href="{{{data.hero.ticketUrl}}}" target="_blank" rel="noopener noreferrer">{{data.hero.ticketLabel}}</a>
+			</div>
+			<p class="text-link"><a href="{{{data.hero.anniversaryUrl}}}" target="_blank" rel="noopener noreferrer">{{data.hero.anniversaryLabel}}</a></p>
+		</div>
+		<div class="hero__sky" aria-hidden="true">
+			<svg class="constellation" viewBox="0 0 560 520" fill="none">
+				<g class="constellation__lines" stroke="currentColor" stroke-width="1.2">
+					<path d="M70 390 L170 280 L280 320 L390 150 L490 210"/>
+					<path d="M170 280 L220 120 L340 90"/>
+					<path d="M280 320 L250 450 L140 470"/>
+					<path d="M390 150 L430 70"/>
+				</g>
+				<g fill="currentColor">
+					<circle cx="70" cy="390" r="3.2"/>
+					<circle cx="170" cy="280" r="4"/>
+					<circle cx="280" cy="320" r="3"/>
+					<circle cx="390" cy="150" r="4.2"/>
+					<circle cx="490" cy="210" r="2.6"/>
+					<circle cx="220" cy="120" r="2.4"/>
+					<circle cx="340" cy="90" r="3"/>
+					<circle cx="250" cy="450" r="2.5"/>
+					<circle cx="140" cy="470" r="2.2"/>
+					<circle cx="430" cy="70" r="2"/>
+				</g>
+			</svg>
+			<p class="hero__since">{{data.hero.since}}</p>
+		</div>
+	</div>
+</section>

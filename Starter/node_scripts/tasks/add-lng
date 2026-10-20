@@ -1,0 +1,28 @@
+import fs from 'fs-extra';
+import path from 'path';
+import globalVars from '../helpers/globalVars.mjs';
+import paths from '../helpers/paths.mjs';
+import logger from '../helpers/logger.mjs';
+
+if (!globalVars.isMultilanguage) {
+	logger.infoLog('isMultilanguage is false. No language files to add.');
+} else {
+	const groups = ['modules', 'items', 'templates'];
+	groups.forEach(group => {
+		const root = path.join(paths.html, group);
+		if (!fs.existsSync(root)) return;
+		fs.readdirSync(root).forEach(name => {
+			const dir = path.join(root, name);
+			const base = path.join(dir, 'data.json');
+			if (!fs.existsSync(base)) return;
+			const source = fs.readFileSync(base, 'utf8');
+			globalVars.languages.forEach(language => {
+				const target = path.join(dir, `${language}.data.json`);
+				if (!fs.existsSync(target)) {
+					fs.writeFileSync(target, source);
+					logger.infoLog(`Added ${group}/${name}/${language}.data.json`);
+				}
+			});
+		});
+	});
+}

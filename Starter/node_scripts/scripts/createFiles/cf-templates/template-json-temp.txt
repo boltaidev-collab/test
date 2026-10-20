@@ -1,0 +1,6 @@
+{
+	"title": "@{template}",
+	"bodyCssClass": "",
+	"output": "@{template}.html",
+	"data": {}
+}
