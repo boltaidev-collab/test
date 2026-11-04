@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="estuaryTitle">
+  <title id="estuaryTitle">Dusk water intake on a low estuary</title>
+  <rect width="1600" height="1000" fill="#141816"/>
+  <rect y="620" width="1600" height="380" fill="#1c2622"/>
+  <path d="M0 700 C 240 660, 420 760, 700 720 S 1200 640, 1600 700 V 1000 H 0 Z" fill="#24332c"/>
+  <path d="M0 780 C 300 740, 520 820, 860 780 S 1280 740, 1600 790 V 1000 H 0 Z" fill="#1a2420"/>
+  <rect x="180" y="460" width="280" height="220" fill="#101311"/>
+  <g fill="#d7b483">
+    <rect x="210" y="490" width="50" height="70" opacity="0.8"/>
+    <rect x="280" y="490" width="50" height="70" opacity="0.45"/>
+    <rect x="350" y="490" width="50" height="70" opacity="0.75"/>
+  </g>
+  <rect x="900" y="520" width="16" height="180" fill="#d7b483"/>
+  <circle cx="908" cy="500" r="28" fill="none" stroke="#d7b483" stroke-width="4"/>
+  <path d="M200 430 H520" stroke="#a68456" stroke-width="3"/>
+</svg>

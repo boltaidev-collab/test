@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="facadeTitle">
+  <title id="facadeTitle">Derby facade bay</title>
+  <rect width="800" height="600" fill="#e7e1d6"/>
+  <rect x="70" y="40" width="660" height="520" fill="#1a1814"/>
+  <g fill="#f4efe6">
+    <rect x="110" y="80" width="80" height="120"/>
+    <rect x="210" y="80" width="80" height="120"/>
+    <rect x="310" y="80" width="80" height="120"/>
+    <rect x="410" y="80" width="80" height="120"/>
+    <rect x="510" y="80" width="80" height="120"/>
+    <rect x="610" y="80" width="80" height="120"/>
+    <rect x="110" y="230" width="80" height="120"/>
+    <rect x="210" y="230" width="80" height="120"/>
+    <rect x="310" y="230" width="80" height="120"/>
+    <rect x="410" y="230" width="80" height="120"/>
+    <rect x="510" y="230" width="80" height="120"/>
+    <rect x="610" y="230" width="80" height="120"/>
+  </g>
+  <rect x="70" y="390" width="660" height="170" fill="#2a241c"/>
+  <rect x="330" y="420" width="140" height="140" fill="#d7b483"/>
+</svg>
