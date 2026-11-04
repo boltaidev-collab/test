@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="netTitle">
+  <title id="netTitle">Schematic of Elmsworth sites linked between Derby, Reading and Glasgow</title>
+  <rect width="1200" height="720" fill="#f7fbfc"/>
+  <g fill="none" stroke="#0f6e7a" stroke-width="3">
+    <path d="M180 480 C 320 460, 420 300, 600 280 S 860 180, 980 220"/>
+    <path d="M180 480 C 300 520, 480 560, 640 500 S 860 420, 1020 460" stroke="#102033"/>
+    <path d="M600 280 C 640 360, 700 420, 640 500" stroke="#c47b2b"/>
+  </g>
+  <g fill="#102033">
+    <circle cx="180" cy="480" r="16"/>
+    <circle cx="600" cy="280" r="16"/>
+    <circle cx="640" cy="500" r="12"/>
+    <circle cx="980" cy="220" r="16"/>
+    <circle cx="1020" cy="460" r="12"/>
+  </g>
+  <g fill="#0f6e7a" font-family="Georgia, serif" font-size="28">
+    <text x="120" y="440">Glasgow</text>
+    <text x="630" y="260">Derby</text>
+    <text x="1000" y="200">Reading</text>
+  </g>
+  <g fill="#526173" font-family="Georgia, serif" font-size="20">
+    <text x="660" y="540">Workplace hub</text>
+    <text x="1040" y="500">Framework yard</text>
+  </g>
+</svg>

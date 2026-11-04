@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="nightTitle">
+  <title id="nightTitle">Night elevation of an envelope works</title>
+  <rect width="1600" height="1000" fill="#101311"/>
+  <rect x="180" y="120" width="1240" height="760" fill="#181c19"/>
+  <g fill="#d7b483">
+    <rect x="240" y="180" width="90" height="140" opacity="0.9"/>
+    <rect x="360" y="180" width="90" height="140" opacity="0.45"/>
+    <rect x="480" y="180" width="90" height="140" opacity="0.85"/>
+    <rect x="600" y="180" width="90" height="140" opacity="0.3"/>
+    <rect x="720" y="180" width="90" height="140" opacity="0.75"/>
+    <rect x="840" y="180" width="90" height="140" opacity="0.55"/>
+    <rect x="960" y="180" width="90" height="140" opacity="0.9"/>
+    <rect x="1080" y="180" width="90" height="140" opacity="0.35"/>
+    <rect x="1200" y="180" width="90" height="140" opacity="0.7"/>
+    <rect x="240" y="360" width="90" height="140" opacity="0.4"/>
+    <rect x="360" y="360" width="90" height="140" opacity="0.88"/>
+    <rect x="480" y="360" width="90" height="140" opacity="0.5"/>
+    <rect x="600" y="360" width="90" height="140" opacity="0.92"/>
+    <rect x="720" y="360" width="90" height="140" opacity="0.28"/>
+    <rect x="840" y="360" width="90" height="140" opacity="0.8"/>
+    <rect x="960" y="360" width="90" height="140" opacity="0.42"/>
+    <rect x="1080" y="360" width="90" height="140" opacity="0.86"/>
+    <rect x="1200" y="360" width="90" height="140" opacity="0.5"/>
+  </g>
+  <rect x="180" y="560" width="1240" height="320" fill="#0c0f0e"/>
+  <rect x="700" y="620" width="200" height="260" fill="#d7b483"/>
+  <path d="M80 780 H420" stroke="#d7b483" stroke-width="6"/>
+  <path d="M250 640 V780" stroke="#d7b483" stroke-width="6"/>
+  <path d="M250 640 L420 700" stroke="#a68456" stroke-width="4"/>
+  <rect y="900" width="1600" height="100" fill="#0c0f0e"/>
+</svg>

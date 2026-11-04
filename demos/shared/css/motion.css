@@ -1,0 +1,69 @@
+/* Module: motion. Headline rise, fade, and photo scale, timed like a long-form annual summary. */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.95s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal="rise"] {
+  opacity: 1;
+  transform: none;
+  overflow: hidden;
+}
+
+[data-reveal="rise"] > span {
+  display: block;
+  transform: translateY(115%);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal="photo"] {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+[data-reveal].is-revealed,
+[data-reveal="photo"].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal="rise"].is-revealed > span {
+  transform: none;
+}
+
+[data-reveal-delay="1"] { transition-delay: 80ms; }
+[data-reveal-delay="2"] { transition-delay: 160ms; }
+[data-reveal-delay="3"] { transition-delay: 240ms; }
+[data-reveal-delay="4"] { transition-delay: 320ms; }
+
+[data-reveal-delay="1"] > span { transition-delay: 80ms; }
+[data-reveal-delay="2"] > span { transition-delay: 160ms; }
+[data-reveal-delay="3"] > span { transition-delay: 240ms; }
+[data-reveal-delay="4"] > span { transition-delay: 320ms; }
+
+.scroll-cue i {
+  animation: cue-line 1.8s ease-in-out infinite;
+}
+
+@keyframes cue-line {
+  0%, 100% { transform: scaleY(0.35); opacity: 0.35; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  [data-reveal],
+  [data-reveal="rise"] > span,
+  [data-reveal="photo"] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-cue i { animation: none; }
+}

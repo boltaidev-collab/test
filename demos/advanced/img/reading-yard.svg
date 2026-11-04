@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="yardTitle">
+  <title id="yardTitle">Reading water yard, tanks and pipe runs</title>
+  <rect width="1200" height="800" fill="#d5e4e8"/>
+  <rect y="560" width="1200" height="240" fill="#c5d5da"/>
+  <circle cx="280" cy="360" r="150" fill="#0f6e7a"/>
+  <circle cx="280" cy="360" r="108" fill="#14919e"/>
+  <circle cx="280" cy="360" r="48" fill="#e7eef1"/>
+  <circle cx="560" cy="400" r="120" fill="#102033"/>
+  <circle cx="560" cy="400" r="82" fill="#1b3a55"/>
+  <circle cx="560" cy="400" r="36" fill="#9fd4dc"/>
+  <rect x="700" y="250" width="360" height="280" rx="8" fill="#102033"/>
+  <g fill="#9fd4dc">
+    <rect x="740" y="290" width="70" height="90"/>
+    <rect x="830" y="290" width="70" height="90"/>
+    <rect x="920" y="290" width="70" height="90"/>
+    <rect x="740" y="400" width="70" height="90"/>
+    <rect x="830" y="400" width="70" height="90"/>
+    <rect x="920" y="400" width="70" height="90"/>
+  </g>
+  <rect x="120" y="500" width="960" height="18" fill="#c47b2b"/>
+  <rect x="180" y="530" width="820" height="10" fill="#0f6e7a"/>
+  <rect x="430" y="250" width="16" height="220" fill="#c47b2b"/>
+  <rect x="250" y="180" width="16" height="40" fill="#102033"/>
+  <rect x="540" y="250" width="16" height="40" fill="#e7eef1"/>
+</svg>

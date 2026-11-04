@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="derbyTitle">
+  <title id="derbyTitle">Elevation of the Derby envelope works</title>
+  <rect width="800" height="1000" fill="#e7e0d4"/>
+  <rect x="70" y="90" width="660" height="820" fill="#1e4636"/>
+  <rect x="70" y="90" width="660" height="28" fill="#16362a"/>
+  <g fill="#f3efe7">
+    <g>
+      <rect x="110" y="160" width="70" height="110"/>
+      <rect x="200" y="160" width="70" height="110"/>
+      <rect x="290" y="160" width="70" height="110"/>
+      <rect x="380" y="160" width="70" height="110"/>
+      <rect x="470" y="160" width="70" height="110"/>
+      <rect x="560" y="160" width="70" height="110"/>
+      <rect x="650" y="160" width="50" height="110"/>
+    </g>
+    <g>
+      <rect x="110" y="300" width="70" height="110"/>
+      <rect x="200" y="300" width="70" height="110"/>
+      <rect x="290" y="300" width="70" height="110"/>
+      <rect x="380" y="300" width="70" height="110"/>
+      <rect x="470" y="300" width="70" height="110"/>
+      <rect x="560" y="300" width="70" height="110"/>
+      <rect x="650" y="300" width="50" height="110"/>
+    </g>
+    <g>
+      <rect x="110" y="440" width="70" height="110"/>
+      <rect x="200" y="440" width="70" height="110"/>
+      <rect x="290" y="440" width="70" height="110"/>
+      <rect x="380" y="440" width="70" height="110"/>
+      <rect x="470" y="440" width="70" height="110"/>
+      <rect x="560" y="440" width="70" height="110"/>
+      <rect x="650" y="440" width="50" height="110"/>
+    </g>
+    <g fill="#d7c4a4">
+      <rect x="110" y="580" width="70" height="110"/>
+      <rect x="200" y="580" width="70" height="110"/>
+      <rect x="290" y="580" width="70" height="110"/>
+      <rect x="380" y="580" width="70" height="110"/>
+      <rect x="470" y="580" width="70" height="110"/>
+      <rect x="560" y="580" width="70" height="110"/>
+      <rect x="650" y="580" width="50" height="110"/>
+    </g>
+  </g>
+  <rect x="70" y="730" width="660" height="180" fill="#16362a"/>
+  <rect x="300" y="760" width="200" height="150" fill="#9a7044"/>
+  <rect x="318" y="778" width="164" height="18" fill="#f3efe7" opacity="0.85"/>
+  <rect x="90" y="930" width="620" height="10" fill="#9a7044"/>
+  <rect x="0" y="948" width="800" height="52" fill="#d9d0c2"/>
+</svg>

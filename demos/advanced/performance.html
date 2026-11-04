@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elmsworth Group — Performance · Advanced</title>
+  <meta name="description" content="Three interactive charts for the Elmsworth Group 2025 report: revenue, divisions and regions.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c5c68'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23ffffff' font-size='16' font-family='Arial'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../shared/css/motion.css">
+  <link rel="stylesheet" href="../shared/css/report.css">
+  <link rel="stylesheet" href="../shared/css/chart.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <noscript><style>[data-reveal],[data-reveal] span{opacity:1 !important;transform:none !important}</style></noscript>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="ribbon">
+    <div class="wrap ribbon-inner">
+      <p>Advanced package · Interactive digital report · £5,500 · 3 weeks</p>
+      <nav aria-label="Other packages">
+        <a href="../index.html">All packages</a>
+        <a href="../standard/index.html">Standard</a>
+        <a href="../premium/index.html">Premium</a>
+      </nav>
+    </div>
+  </div>
+  <header class="topnav">
+    <div class="wrap topnav-inner">
+      <p class="brand"><a href="index.html">Elmsworth</a></p>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav" id="site-nav" aria-label="Report">
+        <a href="index.html">Overview</a>
+        <a href="performance.html" aria-current="page">Performance</a>
+        <a href="financials.html">Financials</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <header class="band wrap">
+      <p class="kicker">Performance</p>
+      <h1 class="display" data-reveal="rise"><span>Three ways to read the same year.</span></h1>
+      <p class="lede" data-reveal>Each chart has a filter and a readout. On the bar chart, hover a year. On the canvas charts, hover a point or use the arrow keys.</p>
+    </header>
+
+    <div class="chart-stack wrap band">
+      <!-- module: chart-card -->
+      <article class="panel" data-module="chart-card" data-reveal>
+        <header>
+          <h2>Group revenue</h2>
+          <!-- module: filter-bar -->
+          <div class="pills" id="revenue-filters" data-module="filter-bar" role="group" aria-label="Revenue range">
+            <button type="button" aria-pressed="true" data-span="5">Five years</button>
+            <button type="button" aria-pressed="false" data-span="3">Three years</button>
+          </div>
+        </header>
+        <p class="note">Continuing operations, £ million.</p>
+        <div class="hbar" id="revenue-bars" data-bars data-max="1000">
+          <div class="hbar-row" data-bar data-value="690.2" data-label="2021" data-display="£690.2 million"><span class="hbar-year">2021</span><span class="hbar-track"><span class="hbar-fill"></span></span><span class="hbar-value">690.2</span></div>
+          <div class="hbar-row" data-bar data-value="724.5" data-label="2022" data-display="£724.5 million"><span class="hbar-year">2022</span><span class="hbar-track"><span class="hbar-fill"></span></span><span class="hbar-value">724.5</span></div>
+          <div class="hbar-row" data-bar data-value="761.0" data-label="2023" data-display="£761.0 million"><span class="hbar-year">2023</span><span class="hbar-track"><span class="hbar-fill"></span></span><span class="hbar-value">761.0</span></div>
+          <div class="hbar-row" data-bar data-value="791.8" data-label="2024" data-display="£791.8 million"><span class="hbar-year">2024</span><span class="hbar-track"><span class="hbar-fill"></span></span><span class="hbar-value">791.8</span></div>
+          <div class="hbar-row" data-bar data-value="842.6" data-label="2025" data-display="£842.6 million"><span class="hbar-year">2025</span><span class="hbar-track"><span class="hbar-fill"></span></span><span class="hbar-value">842.6</span></div>
+          <div class="chart-tip" data-chart-tip role="status" hidden></div>
+        </div>
+        <p class="filter-status" id="revenue-status" aria-live="polite">Showing five years of group revenue.</p>
+      </article>
+
+      <article class="panel" data-module="chart-card" data-reveal>
+        <header>
+          <h2>Revenue by division</h2>
+          <div class="pills" id="division-filters" role="group" aria-label="Division year">
+            <button type="button" data-year="2023" aria-pressed="false">2023</button>
+            <button type="button" data-year="2024" aria-pressed="false">2024</button>
+            <button type="button" data-year="2025" aria-pressed="true">2025</button>
+          </div>
+        </header>
+        <p class="note">Building Systems, Water Infrastructure and Workplace Services, £ million.</p>
+        <div class="chart-frame">
+          <canvas id="division-chart" tabindex="0" aria-label="Bar chart of revenue by division. The selected year starts at 2025."></canvas>
+          <div class="chart-tip" data-chart-tip role="status" hidden></div>
+        </div>
+        <ul class="legend">
+          <li><i style="background:#0c5c68"></i>Building Systems</li>
+          <li><i style="background:#102033"></i>Water Infrastructure</li>
+          <li><i style="background:#a56722"></i>Workplace Services</li>
+        </ul>
+        <p class="filter-status" id="division-status" aria-live="polite">Showing divisional revenue for 2025.</p>
+      </article>
+
+      <article class="panel" data-module="chart-card" data-reveal>
+        <header>
+          <h2>Where revenue and people sit</h2>
+          <div class="pills" id="region-filters" role="group" aria-label="Regional measure">
+            <button type="button" data-measure="revenue" aria-pressed="true">Revenue</button>
+            <button type="button" data-measure="people" aria-pressed="false">People</button>
+            <button type="button" data-measure="both" aria-pressed="false">Both</button>
+          </div>
+        </header>
+        <p class="note">Share of 2025 group revenue beside share of the workforce. Percent.</p>
+        <div class="chart-frame">
+          <canvas id="region-chart" tabindex="0" aria-label="Bar chart comparing regional share of revenue and of people."></canvas>
+          <div class="chart-tip" data-chart-tip role="status" hidden></div>
+        </div>
+        <p class="filter-status" id="region-status" aria-live="polite">Showing revenue share by region.</p>
+        <details>
+          <summary>View the figures</summary>
+          <table class="mini-table">
+            <caption>Regional mix, 2025, percent</caption>
+            <thead>
+              <tr><th scope="col">Region</th><th scope="col">Revenue share</th><th scope="col">People share</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">United Kingdom</th><td>71.0%</td><td>76.8%</td></tr>
+              <tr><th scope="row">Europe</th><td>21.0%</td><td>18.7%</td></tr>
+              <tr><th scope="row">Rest of world</th><td>8.0%</td><td>4.5%</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Elmsworth Group plc · Illustrative figures. Filters change the chart, not the underlying year.</p>
+      <nav aria-label="Package demos">
+        <a href="index.html">Overview</a>
+        <a href="financials.html">Financials</a>
+        <a href="../index.html">All packages</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../shared/js/fade-in.js"></script>
+  <script src="../shared/js/nav.js"></script>
+  <script src="../shared/js/bars.js"></script>
+  <script src="../shared/js/chart.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="bayTitle">
+  <title id="bayTitle">Glasgow fit-out bay</title>
+  <rect width="800" height="600" fill="#f4efe6"/>
+  <rect x="60" y="80" width="680" height="440" fill="#1a1814"/>
+  <rect x="100" y="130" width="250" height="300" fill="#f4efe6"/>
+  <rect x="390" y="130" width="300" height="140" fill="#d7b483"/>
+  <rect x="390" y="290" width="140" height="140" fill="#8aa399"/>
+  <rect x="550" y="290" width="140" height="140" fill="#c2654a"/>
+  <path d="M100 460 H700" stroke="#f4efe6" stroke-width="8"/>
+</svg>

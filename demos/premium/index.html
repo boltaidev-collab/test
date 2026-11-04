@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elmsworth Group — Promises · Premium</title>
+  <meta name="description" content="Flagship reporting experience for Elmsworth Group plc, 2025. Chapter one: three promises kept.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231a1814'/%3E%3Ctext x='16' y='22' text-anchor='middle' fill='%23d7b483' font-size='16' font-family='Georgia'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../shared/css/motion.css">
+  <link rel="stylesheet" href="../shared/css/report.css">
+  <link rel="stylesheet" href="../shared/css/chart.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/viz.css">
+  <noscript><style>[data-reveal],[data-reveal] span{opacity:1 !important;transform:none !important}</style></noscript>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span data-progress></span></div>
+  <a class="skip" href="#content">Skip to content</a>
+  <div class="ribbon">
+    <div class="wrap ribbon-inner">
+      <p>Premium package · Flagship reporting experience · £8,000–£10,000 · 4 weeks</p>
+      <nav aria-label="Other packages">
+        <a href="../index.html">All packages</a>
+        <a href="../standard/index.html">Standard</a>
+        <a href="../advanced/index.html">Advanced</a>
+      </nav>
+    </div>
+  </div>
+  <header class="topnav">
+    <div class="wrap topnav-inner">
+      <p class="brand"><a href="index.html">Elmsworth</a></p>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="site-nav chapter-nav" id="site-nav" aria-label="Chapters">
+        <a href="index.html" aria-current="page">01 Promises</a>
+        <a href="value.html">02 Money</a>
+        <a href="people.html">03 People</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- module: story-hero -->
+    <section class="hero hero--ink wrap" data-module="story-hero">
+      <div>
+        <p class="kicker">Chapter 01</p>
+        <h1 class="display" data-reveal="rise"><span>Three promises, kept in public.</span></h1>
+        <p class="lede" data-reveal>In 2024 we told shareholders we would make the work safer, the cash cleaner, and the carbon lower. This is the record of that year.</p>
+      </div>
+      <figure class="hero-photo" data-reveal="photo">
+        <img src="img/night-works.svg" width="1600" height="1000" alt="Night elevation of an envelope works, a dark block with a scatter of gold windows.">
+        <figcaption>Envelope works, Derby, after the late shift.</figcaption>
+      </figure>
+      <p class="scroll-cue"><span>Scroll</span><i></i></p>
+    </section>
+
+    <!-- module: promise-steps -->
+    <section class="band wrap" data-module="promise-steps" aria-labelledby="promises-title">
+      <h2 id="promises-title" data-reveal="rise"><span>What we said, and what happened</span></h2>
+      <div class="story-grid">
+        <article class="story" data-reveal>
+          <p class="kicker">Safety</p>
+          <h3>Fewer people hurt</h3>
+          <p class="stat-value" data-counter data-to="0.42" data-decimals="2" aria-label="0.42 recordable injuries per 200,000 hours">0</p>
+          <p>Recordable injury frequency, per 200,000 hours, down from 0.51. The Derby envelope line ran a full year without a recordable hand injury.</p>
+        </article>
+        <article class="story" data-reveal data-reveal-delay="1">
+          <p class="kicker">Cash</p>
+          <h3>A cleaner balance</h3>
+          <p class="stat-value" data-counter data-to="112.4" data-decimals="1" data-prefix="£" data-suffix="m" aria-label="112.4 million pounds of net debt">0</p>
+          <p>Net debt, down £16.2 million. Free cash flow was £71.8 million and the dividend rose to 18.5 pence, covered by earnings.</p>
+        </article>
+        <article class="story" data-reveal data-reveal-delay="2">
+          <p class="kicker">Carbon</p>
+          <h3>Lower, on purpose</h3>
+          <p class="stat-value" data-counter data-to="46" data-decimals="0" data-suffix="%" aria-label="46 percent reduction versus 2019">0</p>
+          <p>Scope 1 and 2 emissions versus 2019. The pathway below is the route we have published to 2030, not a certificate.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- module: viz-pathway -->
+    <section class="band wrap" data-module="viz-pathway" aria-labelledby="path-title">
+      <div class="panel" data-reveal>
+        <h2 id="path-title">Operational carbon, against the pathway</h2>
+        <p class="note">Thousand tonnes of CO₂e. The solid line is what we emitted. The dashed line is the pathway, including 2030.</p>
+        <div class="pathway" data-pathway>
+          <svg viewBox="0 0 640 320" role="img" aria-label="Emissions fell from 48.2 thousand tonnes in 2019 to 26.0 in 2025, with a pathway to 14.5 by 2030."></svg>
+          <label>Move through the years
+            <input type="range" min="0" max="6" value="5" aria-describedby="path-readout">
+          </label>
+          <p id="path-readout" data-pathway-readout aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Elmsworth Group plc · Illustrative flagship report. People and figures are fictional.</p>
+      <nav aria-label="Package demos">
+        <a href="value.html">Next · Where the money moved</a>
+        <a href="../index.html">All packages</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../shared/js/fade-in.js"></script>
+  <script src="../shared/js/counter.js"></script>
+  <script src="../shared/js/nav.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/viz.js"></script>
+</body>
+</html>
